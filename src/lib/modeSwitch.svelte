@@ -12,8 +12,11 @@
             const theme = window.localStorage.getItem('theme')
             if(theme && themes.includes(theme)) {
                 document.documentElement.setAttribute('data-theme', theme)
+                theme == 'sunset' ? darkMode = true : darkMode = false
                 currentTheme = theme
-                currentTheme == 'sunset' ? darkMode = true : darkMode = false
+            } else {
+                document.documentElement.setAttribute('data-theme', 'sunset')
+                currentTheme = 'sunset'
             }
         }
     })
