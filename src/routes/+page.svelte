@@ -1,16 +1,11 @@
 <script lang="ts">
 	import { gsap } from 'gsap';
 	import { fade, slide, fly } from 'svelte/transition'
-	import * as Card from '$lib/components/ui/card';
-	import modeSwitch from '$lib/modeSwitch.svelte';
 	import OwnCard from '$lib/card.svelte';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
-
-	import { Button } from "$lib/components/ui/button";
     import { Sun, Moon } from "lucide-svelte";
-  
-    import { toggleMode } from "mode-watcher";
+	import ModeSwitch from '$lib/modeSwitch.svelte'
 
     import logoWhite from '$lib/images/SkøtmediaWhite.svg'
     import logoBlue from '$lib/images/SkøtmediaBlue.svg'
@@ -85,11 +80,25 @@
 
 
 <div class="h-screen w-screen bg-cyan-950 flex flex-col">
+	<div class="absolute top-0 right-0 p-4">
+		<ModeSwitch/>
+	</div>
 	<img class="w-96 h-96 m-auto" bind:this={logo} src={logoWhite}/>
 	{#if loaded}
 		<div bind:this={cards} transition:fly={{y: 200, duration: 300}} class="absolute flex flex-row w-screen m-auto h-fit p-16 bottom-0 inset-x-0 mb-8 justify-center gap-16">
 			<OwnCard imgSrc={webLogo}/>
 			<OwnCard imgSrc={photoLogo}/>
+			<div class="card w-96 bg-base-100 shadow-xl">
+				<figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+				<div class="card-body">
+				  <h2 class="card-title">Shoes!</h2>
+				  <p>If a dog chews shoes whose shoes does he choose?</p>
+				  <div class="card-actions justify-end">
+					<button class="btn btn-primary">Buy Now</button>
+			  	  </div>
+				</div>
+			  </div>
+			  
 		</div>
 	{/if}
 </div>

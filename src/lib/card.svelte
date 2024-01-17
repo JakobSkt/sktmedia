@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { onMount } from 'svelte'
 
     export let imgSrc
 
@@ -19,6 +20,7 @@
             description = 'Skøtmedia Photo fanger de vigtigste øjeblikke i DIT liv og foreviger dem i foto- eller videoformat. Høj kvalitet, kundetilfredshed og kreativitet er vores nøgleord.'
             break
     }
+    $: console.log('Data theme on card: ' + document.documentElement.getAttribute('data-theme'))
 
     let active: boolean = false
 
@@ -35,7 +37,7 @@
     }
 </script>
 <main>
-    <div on:click={handleInfo} class="group cursor-pointer relative px-40 py-64 bg-zinc-200 backdrop-blur-xl rounded-xl drop-shadow-sm grayscale-60 hover:grayscale-0 hover:shadow-2xl hover:scale-105 fisrt:grayscale-0 transition duration-300 bg-cover" id="card">
+    <div on:click={handleInfo} class="group cursor-pointer relative px-40 py-64 backdrop-blur-xl rounded-xl drop-shadow-sm grayscale-60 hover:grayscale-0 hover:shadow-2xl hover:scale-105 fisrt:grayscale-0 transition duration-300 bg-cover" id="card">
         <div class:active={active} class="absolute flex flex-col gap-2 px-4 py-4 bg-zinc-400/50 backdrop-blur-sm bottom-0 inset-x-0 rounded-xl" id="cardInfo">
             {#if svgWhite}
                 <svg on:click={() => active = false} class:active={active} class="z-40 absolute w-12 h-12 stroke-white self-center -mt-20 opacity-0 transition duration-200 hover:scale-105" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" data-slot="icon">
@@ -52,14 +54,23 @@
                 <div>
                     <p class="text-zinc-200 mb-4 text-center"> {description} </p>
                 </div>
-                <button on:click={handleInfo} class="mt-4 px-12 py-2 text-white rounded-full font-bold text-xl bg-gradient-to-r from-red-400 to-orange-400 drop-shadow-lg hover:scale-105 hover:drop-shadow-xl transition-all"> Læs mere! </button>
+                <button on:click={handleInfo} class="btn btn-neutral text-white w-40 rounded-lg hover:scale-105 hover:drop-shadow-md"> Læs mere! </button>
             </div>
     </div>
 </main>
 
 <style>
+    :root html[data-theme="sunset"] {
+        --cardColor: #fff;
+    }
+
+    :root html[data-theme="cmyk"] {
+        --cardColor: #000;
+    }
+	
     #card {
         overflow: hidden;
+        background: var(--cardColor)
     }
 
     #cardInfo {
@@ -74,5 +85,7 @@
     svg.active {
         opacity: 1;
     }
+
+
 
 </style>

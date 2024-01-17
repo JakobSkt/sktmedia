@@ -1,19 +1,53 @@
 <script lang="ts">
-    import { Button } from "$lib/components/ui/button";
-    import { Sun, Moon } from "lucide-svelte";
-  
-    import { toggleMode } from "mode-watcher";
+    import { onMount } from "svelte"
+    import { Button } from "$lib/components/ui/button"
+    import { Sun, Moon } from "lucide-svelte"
+    
+    let currentTheme = ''
+    let themes = ['sunset', 'cmyk']
+    let darkMode = false
+
+    onMount(() => {
+        if(typeof window !== 'undefined') {
+            const theme = window.localStorage.getItem('theme')
+            if(theme && themes.includes(theme)) {
+                document.documentElement.setAttribute('data-theme', theme)
+                currentTheme = theme
+                currentTheme == 'sunset' ? darkMode = true : darkMode = false
+            }
+        }
+    })
+
+    function setTheme() {
+        let newTheme = ''
+        switch(currentTheme) {
+            case 'sunset':
+                newTheme = 'cmyk'
+                break;
+            
+            case 'cmyk':
+                newTheme = 'sunset'
+                break;
+        }
+       
+        const cookieAge = 60 * 60 * 24 * 365
+        window.localStorage.setItem('theme', newTheme)
+        document.cookie = `theme=${newTheme}; max-age=${cookieAge}; path=/; SameSite=Lax`
+        document.documentElement.setAttribute('data-theme', newTheme)
+        currentTheme = newTheme  
+        currentTheme == 'sunset' ? darkMode = true : darkMode = false    
+        console.log(newTheme)      
+        
+    }
 </script>
   
 <main>
-    <Button on:click={toggleMode} variant="outline" size="icon">
-        <Sun
-          class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-        />
-        <Moon
-          class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-        />
-        <span class="sr-only">Toggle theme</span>
-      </Button>
+    <button class="btn btn-ghost" on:click={setTheme}>
+        {#if darkMode}
+            <Sun class="stroke-amber-400 z-40"/>
+        {:else}
+            <Moon class="stroke-cyan-900 z-40"/>
+        {/if}
+    </button>
 </main>
   

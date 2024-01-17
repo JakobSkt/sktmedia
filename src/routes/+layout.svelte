@@ -1,7 +1,12 @@
 <script>
       import "../app.css";
-      import { ModeWatcher } from "mode-watcher";
+      import { onMount } from 'svelte'
+      import { themeChange } from 'theme-change'
+
+      onMount(() => {
+            themeChange(false)
+      })
+
 </script>
 
-<ModeWatcher />
 <slot />
