@@ -5,7 +5,7 @@
     
     let currentTheme = ''
     let themes = ['sunset', 'cmyk']
-    let darkMode = false
+    export let darkMode = false
 
     onMount(() => {
         if(typeof window !== 'undefined') {
@@ -44,7 +44,7 @@
     }
 </script>
   
-<main>
+<main class="z-10">
     <button class="btn btn-ghost" on:click={setTheme}>
         {#if darkMode}
             <Sun class="stroke-amber-400 z-40"/>
