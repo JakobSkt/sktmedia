@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { gsap } from 'gsap';
 	import { fade, slide, fly } from 'svelte/transition'
-	import OwnCard from '$lib/card.svelte';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
     import { Sun, Moon } from "lucide-svelte";

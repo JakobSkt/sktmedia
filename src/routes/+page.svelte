@@ -57,10 +57,10 @@
 	$: console.log(active)
 </script>
 
-<main on:mousemove={handleMouseMove}>
+<main class="w-screen h-screen overflow-hidden" on:mousemove={handleMouseMove}>
 	
 	{#if webActive}
-		<div transition:fly={{x: -1000, y: 1000, duration: 200}} class="absolute top-0 left-0 h-screen w-screen z-50 flex flex-col items-center justify-start bg-primary">
+		<div transition:fly={{x: -1000, y: 1000, duration: 300}} class="absolute top-0 left-0 h-screen w-screen z-50 flex flex-col items-center justify-start bg-primary">
 			<img src={webLogo} alt="Skøtmedia weblogo">
 			<p class="font-light text-neutral text-center w-2/3"> Skøtmedia WEB designer og vedligeholder moderne websystemer og apps med de nyeste teknologier. Fokus er at skabe en god brugeropvelese og et lækkert design.</p>
 
@@ -76,19 +76,16 @@
 				</div>
 			</div>
 			
-
-			<div class="absolute top-0 right-0 p-8 cursor-pointer hover:*:stroke-zinc-400 transition" on:click={() => webActive = !webActive}>
+			<div class="absolute top-0 right-0 p-8 cursor-pointer hover:*:stroke-zinc-300 transition" on:click={() => webActive = !webActive}>
 				<svg class="h-10 w-10 stroke-zinc-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
 					<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 4.5-15 15m0 0h11.25m-11.25 0V8.25" />
 				  </svg>	  
 			</div>
 		</div>
-
-		
 	{/if}
 	
 	{#if photoActive}
-	<div transition:fly={{x: 500, y: 500, duration: 200}} class="absolute top-0 left-0 h-screen w-screen z-50 flex flex-col items-center justify-start bg-secondary">
+	<div transition:fly={{x: 1000, y: 1000, duration: 300}} class="absolute top-0 left-0 h-screen w-screen z-50 flex flex-col items-center justify-start bg-secondary">
 		<img src={photoLogo} alt="Skøtmedia photologo">
 		<p class="font-light text-neutral text-center w-2/3"> Skøtmedia Photo fanger de vigtigste øjeblikke i DIT liv og foreviger dem i foto- eller videoformat. Høj kvalitet, kundetilfredshed og kreativitet er vores nøgleord.</p>
 
@@ -104,12 +101,11 @@
 			</div>
 		</div>
 
-		<div class="absolute top-0 left-0 p-8 cursor-pointer hover:*:stroke-zinc-400 transition" on:click={() => photoActive = !photoActive}>
+		<div class="absolute top-0 left-0 p-8 cursor-pointer hover:*:stroke-zinc-300 transition" on:click={() => photoActive = !photoActive}>
 			<svg class="h-10 w-10 stroke-zinc-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
 				<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 4.5 15 15m0 0V8.25m0 11.25H8.25" />
 			</svg>	
 		</div>
-			
 	</div>
 	{/if}
 	
@@ -129,7 +125,7 @@
 		</div>
 		
 		<div class=" w-screen h-1/2 mt-8">
-			<div class="absolute w-screen h-1/2 cursor-pointer bg-base-200 overflow-hidden" id="seperator">
+			<div class="absolute w-screen h-1/2 cursor-pointer overflow-hidden" id="seperator">
 				
 				<div class:webActive={webActive} on:click={() => redirect('web')} class="bg-primary flex flex-col items-baseline *:mx-10 sm:*:mx-20 justify-evenly shadow-xl w-screen h-full grayscale-50 hover:scale-110 hover:grayscale-0 transition" id="webCard">
 					<h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white"> WEB </h1>
@@ -144,15 +140,16 @@
 </main>
 
 <style>
-
 	#webCard {
 		-webkit-clip-path: polygon(100% 0, 0 0, 0 100%);
 		clip-path: polygon(0 0, 52.5% 0, 47.5% 100%, 0 100%);
+		transition: 1s cubic-bezier(0.19, 1, 0.22, 1)
 	}
 
 	#photoCard {
 		-webkit-clip-path: polygon(100% 0, 0 100%, 100% 0);
 		clip-path: polygon(52.5% 0, 100% 0, 100% 100%, 47.5% 100%);
+		transition: 1s cubic-bezier(0.19, 1, 0.22, 1)
 	}
 	
 	.mouse {
