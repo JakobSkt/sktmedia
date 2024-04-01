@@ -4,7 +4,7 @@
     import { Sun, Moon } from "lucide-svelte"
     
     let currentTheme = ''
-    let themes = ['sunset', 'cmyk']
+    let themes = ['dim', 'emerald']
     export let darkMode = false
 
     onMount(() => {
@@ -12,11 +12,11 @@
             const theme = window.localStorage.getItem('theme')
             if(theme && themes.includes(theme)) {
                 document.documentElement.setAttribute('data-theme', theme)
-                theme == 'sunset' ? darkMode = true : darkMode = false
+                theme == 'dim' ? darkMode = true : darkMode = false
                 currentTheme = theme
             } else {
-                document.documentElement.setAttribute('data-theme', 'sunset')
-                currentTheme = 'sunset'
+                document.documentElement.setAttribute('data-theme', 'dim')
+                currentTheme = 'dim'
             }
         }
     })
@@ -24,12 +24,12 @@
     function setTheme() {
         let newTheme = ''
         switch(currentTheme) {
-            case 'sunset':
-                newTheme = 'cmyk'
+            case 'dim':
+                newTheme = 'emerald'
                 break;
             
-            case 'cmyk':
-                newTheme = 'sunset'
+            case 'emerald':
+                newTheme = 'dim'
                 break;
         }
        
@@ -38,14 +38,14 @@
         document.cookie = `theme=${newTheme}; max-age=${cookieAge}; path=/; SameSite=Lax`
         document.documentElement.setAttribute('data-theme', newTheme)
         currentTheme = newTheme  
-        currentTheme == 'sunset' ? darkMode = true : darkMode = false    
+        currentTheme == 'dim' ? darkMode = true : darkMode = false    
         console.log(newTheme)      
         
     }
 </script>
   
-<main class="z-10">
-    <button class="btn btn-ghost" on:click={setTheme}>
+<main>
+    <button class="btn btn-ghost -z-10" on:click={setTheme}>
         {#if darkMode}
             <Sun class="stroke-amber-400 z-40"/>
         {:else}

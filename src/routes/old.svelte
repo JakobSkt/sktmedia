@@ -126,11 +126,11 @@
 		background-color: var(--bg-color);
 	}
 
-	[data-theme="sunset"] {
+	[data-theme="dim"] {
 		--bg-color: theme(colors.cyan.500)
 	}
 
-	[data-theme="cmyk"] {
+	[data-theme="emerald"] {
 		--bg-color: theme(colors.zinc.100)
 	}
 

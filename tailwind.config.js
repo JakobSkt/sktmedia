@@ -19,6 +19,6 @@ export default {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ['cmyk', 'sunset']
+    themes: ['emerald', 'dim']
   }
 }
