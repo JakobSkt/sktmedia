@@ -13,7 +13,8 @@ export default {
         'darkDots': 'url("./src/lib/images/dot-pattern-darkV2.svg")',
       },
       backgroundSize: {
-        'dotsSize': '8%',
+        'smallDots': '8%',
+        'largeDots': '23%',
       },
       backgroundPosition: {
         'dotsPosition': '10% 9.9%',

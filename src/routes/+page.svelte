@@ -10,6 +10,10 @@
 	import logoBlue from '$lib/images/SkøtmediaBlue.svg'
 	import webLogo from '$lib/images/SkøtmediaWhiteWebBlue.png'
 	import photoLogo from '$lib/images/SkøtmediaWhitePhotoBlue.png'
+	// import konfirmandImg from '$lib/images/konfirmand.jpg'
+	import bryllupImg from '$lib/images/bryllupImg.jpg'
+	// import barnedaabImg from '$lib/images/barnedaab.jpg'
+	// import produktImg from '$lib/images/produkt.jpg'
 
 	let m = { x: 0, y: 0 }
 	let circle: HTMLDivElement
@@ -33,10 +37,10 @@
 
 	function redirect(target: string) {
 		if(target == "web") {
-			webActive = !webActive
+			goto('/web')
 		}
 		else if(target == "photo") {
-			photoActive = !photoActive
+			window.location.href = "https://byjakobskoet.mypixieset.com/", "_blank"
 		}
 	}
 
@@ -57,7 +61,7 @@
 
 			<div class="flex flex-col items-center justify-center gap-2 w-full p-12">
 				<h2 class="font-black text-neutral place-self-start mx-10"> Arbejde </h2>
-				<div class="w-full p-4 rounded-2xl grid grid-cols-2 text-center bg-neutral text-white">
+				<div class="w-full p-4 rounded-2xl grid grid-cols-1 md:grid-cols-2 text-center bg-neutral text-white">
 					<div> First </div>
 					<div> Second </div>
 					<div> Third </div>
@@ -77,22 +81,22 @@
 	
 	{#if photoActive}
 	<div transition:scale={{duration: 300, easing: ease.quintOut}} class="absolute top-0 left-0 h-screen w-screen z-50 flex flex-col items-center justify-start bg-secondary">
-		<img src={photoLogo} alt="Skøtmedia photologo">
+		<img src={photoLogo} alt="Skøtmedia photologo" class="px-12">
 		<p class="font-light text-neutral text-center w-2/3"> Skøtmedia Photo fanger de vigtigste øjeblikke i DIT liv og foreviger dem i foto- eller videoformat. Høj kvalitet, kundetilfredshed og kreativitet er vores nøgleord.</p>
 
 		<div class="flex flex-col items-center justify-center gap-2 w-full p-12">
 			<h2 class="font-black text-neutral place-self-start mx-10"> Arbejde </h2>
-			<div class="w-full p-4 rounded-2xl grid grid-cols-2 text-center bg-neutral text-white">
-				<div> First </div>
-				<div> Second </div>
-				<div> Third </div>
-				<div> Fourth </div>
-				<div> Fifth </div>
-				<div> Sixth </div>
+			<div class="w-full p-4 rounded-2xl grid grid-cols-3 text-center bg-neutral text-white">
+				<div class="badge">default</div>
+				<div class="badge badge-neutral">Bryllup</div>
+				<div class="badge badge-primary">Konfirmation</div>
+				<div class="badge badge-secondary">Barnedåb</div>
+				<div class="badge badge-accent">accent</div>
+				<div class="badge badge-ghost">ghost</div>
 			</div>
 		</div>
 
-		<div class="absolute top-0 left-0 p-8 cursor-pointer hover:*:stroke-zinc-300 transition" on:click={() => photoActive = !photoActive}>
+		<div class="absolute top-0 left-0 p-4 md:p-8 cursor-pointer hover:*:stroke-zinc-300 transition" on:click={() => photoActive = !photoActive}>
 			<svg class="h-10 w-10 stroke-zinc-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
 				<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 4.5 15 15m0 0V8.25m0 11.25H8.25" />
 			</svg>	
@@ -100,7 +104,7 @@
 	</div>
 	{/if}
 	
-	<div class="h-screen w-screen flex flex-col bg-base-100 bg-dotsSize bg-dotsPosition {darkMode ? 'bg-darkDots' : 'bg-lightDots'}" id="hero">
+	<div class="h-screen w-screen flex flex-col bg-base-100 bg-largeDots md:bg-smallDots bg-dotsPosition {darkMode ? 'bg-darkDots' : 'bg-lightDots'}" id="hero">
 		<div class="absolute top-0 right-0 p-4">
 			<ModeSwitch bind:darkMode={darkMode}/>
 		</div>
