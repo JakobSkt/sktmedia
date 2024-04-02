@@ -15,6 +15,9 @@ export default {
       backgroundSize: {
         'dotsSize': '8%',
       },
+      backgroundPosition: {
+        'dotsPosition': '10% 9.9%',
+      },
     },
   },
   plugins: [require("daisyui")],
