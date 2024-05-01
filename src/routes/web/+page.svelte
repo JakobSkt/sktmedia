@@ -15,7 +15,7 @@
     import WordpressImg from '$lib/images/Wordpress.svg'
     import WixBlack from '$lib/images/Wix logoB.svg'
     import WixWhite from '$lib/images/Wix logoW.svg'
-    import AirBorneImg from '$lib/images/AirBornesiteV2.jpeg'
+    import AirBorneImg from '$lib/images/AirbornesiteV2.jpeg'
     import WebflowImg from '$lib/images/Webflow.svg'
 
 	let m = { x: 0, y: 0 }
