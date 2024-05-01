@@ -1,19 +1,17 @@
 <script lang="ts">
-	import { gsap } from 'gsap';
 	import { fade, slide, fly, scale } from 'svelte/transition'
+	import { onMount } from 'svelte'
+	import { goto } from '$app/navigation'
+    import { Sun, Moon } from "lucide-svelte"
+	import * as rive from "@rive-app/canvas"
 	import * as ease from 'svelte/easing'
-	import { onMount } from 'svelte';
-	import { goto } from '$app/navigation';
-    import { Sun, Moon } from "lucide-svelte";
 	import ModeSwitch from '$lib/modeSwitch.svelte'
 	import logoWhite from '$lib/images/SkøtmediaWhite.svg'
 	import logoBlue from '$lib/images/SkøtmediaBlue.svg'
 	import webLogo from '$lib/images/SkøtmediaWhiteWebBlue.png'
 	import photoLogo from '$lib/images/SkøtmediaWhitePhotoBlue.png'
-	// import konfirmandImg from '$lib/images/konfirmand.jpg'
-	import bryllupImg from '$lib/images/bryllupImg.jpg'
-	// import barnedaabImg from '$lib/images/barnedaab.jpg'
-	// import produktImg from '$lib/images/produkt.jpg'
+	import opening from '$lib/images/openingV2.riv'
+	import hiPictire from '$lib/images/SktmediaHi.png'
 
 	let m = { x: 0, y: 0 }
 	let circle: HTMLDivElement
@@ -49,11 +47,19 @@
 	let active: boolean = false
 	let webActive: boolean = false
 	let photoActive: boolean = false
+	let canvas: HTMLCanvasElement
 
+	onMount(() => {
+		new rive.Rive({
+			src: opening,
+			canvas: canvas,
+			autoplay: true,
+		})
+	})
+	
 </script>
 
 <main class="w-screen h-screen overflow-clip" on:mousemove={handleMouseMove}>
-	
 	{#if webActive}
 		<div transition:scale={{duration: 300, easing: ease.quintOut}} class="absolute top-0 left-0 h-screen w-screen z-50 flex flex-col items-center justify-start bg-primary">
 			<img src={webLogo} alt="Skøtmedia weblogo" class="px-12">
@@ -108,10 +114,12 @@
 		<div class="absolute top-0 right-0 p-4">
 			<ModeSwitch bind:darkMode={darkMode}/>
 		</div>
+
 	
 		<div bind:this={circle} class="mouse z-50 bg-base-200"></div>
 		
-		<div class="top-0">
+		<div class="top-0 flex flex-row">
+
 			{#if darkMode}
 				<img class="h-60 mx-auto my-16" src={logoWhite} alt="hero logo"/>
 			{:else}
@@ -119,7 +127,7 @@
 			{/if}
 		</div>
 		
-		<div class=" w-screen h-1/2 mt-8">
+		<div class="w-screen h-1/2 mt-8">
 			<div class="absolute w-screen h-1/2 cursor-pointer" id="seperator">
 				
 				<div class:webActive={webActive} on:click={() => redirect('web')} class="bg-primary flex flex-col items-baseline *:mx-10 sm:*:mx-20 lg:*:mx-32 justify-evenly shadow-xl w-screen h-full grayscale-50 hover:scale-110 hover:grayscale-0 transition" id="webCard">
