@@ -1,12 +1,12 @@
 <script>
     import emblaCarouselSvelte from 'embla-carousel-svelte'
-    import KohavenImg from '$lib/images/KohavenRoneklint.png'
-    import HundePensionImg from '$lib/images/Hundepension.png'
-    import WordpressImg from '$lib/images/Wordpress.svg'
-    import WixBlack from '$lib/images/Wix logoB.svg'
-    import WixWhite from '$lib/images/Wix logoW.svg'
-    import AirBorneImg from '$lib/images/AirBorneSite.png'
-    import WebflowImg from '$lib/images/Webflow.svg'
+    import KohavenImg from '$lib/assets/KohavenRoneklint.png'
+    import HundePensionImg from '$lib/assets/Hundepension.png'
+    import WordpressImg from '$lib/assets/Wordpress.svg'
+    import WixBlack from '$lib/assets/Wix logoB.svg'
+    import WixWhite from '$lib/assets/Wix logoW.svg'
+    import AirBorneImg from '$lib/assets/AirBorneSite.png'
+    import WebflowImg from '$lib/assets/Webflow.svg'
   
     let emblaApi
     let options = { loop: true }

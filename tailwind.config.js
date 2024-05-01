@@ -9,8 +9,8 @@ export default {
         50: '50%'
       },
       backgroundImage: {
-        'lightDots': 'url("./src/lib/images/dot-pattern-dark.svg")',
-        'darkDots': 'url("./src/lib/images/dot-pattern-darkV2.svg")',
+        'lightDots': 'url("./src/lib/assets/dot-pattern-dark.svg")',
+        'darkDots': 'url("./src/lib/assets/dot-pattern-darkV2.svg")',
       },
       backgroundSize: {
         'smallDots': '8%',

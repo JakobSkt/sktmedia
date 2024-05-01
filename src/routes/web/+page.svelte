@@ -6,17 +6,17 @@
 	import { goto } from '$app/navigation'
     import { Sun, Moon } from "lucide-svelte"
 	import ModeSwitch from '$lib/modeSwitch.svelte'
-	import logoWhite from '$lib/images/SkøtmediaWhite.svg'
-	import logoBlue from '$lib/images/SkøtmediaBlue.svg'
-	import webLogo from '$lib/images/SkøtmediaWhiteWebBlue.png'
-	import photoLogo from '$lib/images/SkøtmediaWhitePhotoBlue.png'
-    import KohavenImg from '$lib/images/KohavenRoneklint.png'
-    import HundePensionImg from '$lib/images/HundepensionV2.jpeg'
-    import WordpressImg from '$lib/images/Wordpress.svg'
-    import WixBlack from '$lib/images/Wix logoB.svg'
-    import WixWhite from '$lib/images/Wix logoW.svg'
-    import AirBorneImg from '$lib/images/AirbornesiteV2.jpeg'
-    import WebflowImg from '$lib/images/Webflow.svg'
+	import logoWhite from '$lib/assets/SkøtmediaWhite.svg'
+	import logoBlue from '$lib/assets/SkøtmediaBlue.svg'
+	import webLogo from '$lib/assets/SkøtmediaWhiteWebBlue.png'
+	import photoLogo from '$lib/assets/SkøtmediaWhitePhotoBlue.png'
+    import KohavenImg from '$lib/assets/KohavenRoneklint.png'
+    import HundePensionImg from '$lib/assets/HundepensionV2.jpeg'
+    import WordpressImg from '$lib/assets/Wordpress.svg'
+    import WixBlack from '$lib/assets/Wix logoB.svg'
+    import WixWhite from '$lib/assets/Wix logoW.svg'
+    import AirBorneImg from '$lib/assets/AirbornesiteV2.jpeg'
+    import WebflowImg from '$lib/assets/Webflow.svg'
 
 	let m = { x: 0, y: 0 }
 	let circle: HTMLDivElement

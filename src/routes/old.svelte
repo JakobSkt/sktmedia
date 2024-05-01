@@ -6,10 +6,10 @@
     import { Sun, Moon } from "lucide-svelte";
 	import ModeSwitch from '$lib/modeSwitch.svelte'
 
-    import logoWhite from '$lib/images/SkøtmediaWhite.svg'
-    import logoBlue from '$lib/images/SkøtmediaBlue.svg'
-	import webLogo from '$lib/images/SkøtmediaWhiteWebBlue.png'
-	import photoLogo from '$lib/images/SkøtmediaWhitePhotoBlue.png'
+    import logoWhite from '$lib/assets/SkøtmediaWhite.svg'
+    import logoBlue from '$lib/assets/SkøtmediaBlue.svg'
+	import webLogo from '$lib/assets/SkøtmediaWhiteWebBlue.png'
+	import photoLogo from '$lib/assets/SkøtmediaWhitePhotoBlue.png'
 
     let logo: gsap.TweenTarget
 	let cards: gsap.TweenTarget
@@ -29,9 +29,9 @@
 	let innerHeight: number
 	let innerWidth: number
 
-	let bgImages = 
-	['https://images.unsplash.com/photo-1593720213428-28a5b9e94613?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'https://images.unsplash.com/photo-1596483941348-cb6d15e0fd60?q=80&w=2371&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+	let bgassets = 
+	['https://assets.unsplash.com/photo-1593720213428-28a5b9e94613?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://assets.unsplash.com/photo-1596483941348-cb6d15e0fd60?q=80&w=2371&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 	]
 	
 	onMount(async () => {
@@ -90,8 +90,8 @@
 	<img class="w-96 h-96 m-auto" bind:this={logo} src={logoWhite}/>
 	{#if loaded}
 		<div bind:this={cards} transition:fly={{y: 200, duration: 300}} class="absolute flex flex-row w-screen m-auto h-fit p-16 bottom-0 inset-x-0 mb-8 justify-center gap-16">
-			<OwnCard imgSrc={webLogo} bgSrc={bgImages[0]}/>
-			<OwnCard imgSrc={photoLogo} bgSrc={bgImages[1]}/>
+			<OwnCard imgSrc={webLogo} bgSrc={bgassets[0]}/>
+			<OwnCard imgSrc={photoLogo} bgSrc={bgassets[1]}/>
 			<!-- <div class="card w-96 bg-base-200 shadow-xl" id="webcard">
 				<figure><img class="w-3/4" src={webLogo} alt="webLogo" /></figure>
 				<div class="card-body text-center">
@@ -138,7 +138,7 @@
 	}
 
 	#webcard:hover {
-		background-image: url('https://images.unsplash.com/photo-1593720213428-28a5b9e94613?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+		background-image: url('https://assets.unsplash.com/photo-1593720213428-28a5b9e94613?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 		background-size: cover;
 		backdrop-filter: blur(4px);
 		transition: all 2s;

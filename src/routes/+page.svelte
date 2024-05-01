@@ -3,15 +3,13 @@
 	import { onMount } from 'svelte'
 	import { goto } from '$app/navigation'
     import { Sun, Moon } from "lucide-svelte"
-	import * as rive from "@rive-app/canvas"
 	import * as ease from 'svelte/easing'
 	import ModeSwitch from '$lib/modeSwitch.svelte'
-	import logoWhite from '$lib/images/SkøtmediaWhite.svg'
-	import logoBlue from '$lib/images/SkøtmediaBlue.svg'
-	import webLogo from '$lib/images/SkøtmediaWhiteWebBlue.png'
-	import photoLogo from '$lib/images/SkøtmediaWhitePhotoBlue.png'
-	import opening from '$lib/images/openingV2.riv'
-	import hiPictire from '$lib/images/SktmediaHi.png'
+	import logoWhite from '$lib/assets/SkøtmediaWhite.svg'
+	import logoBlue from '$lib/assets/SkøtmediaBlue.svg'
+	import webLogo from '$lib/assets/SkøtmediaWhiteWebBlue.png'
+	import photoLogo from '$lib/assets/SkøtmediaWhitePhotoBlue.png'
+	import hiPictire from '$lib/assets/SktmediaHi.png'
 
 	let m = { x: 0, y: 0 }
 	let circle: HTMLDivElement
@@ -48,14 +46,6 @@
 	let webActive: boolean = false
 	let photoActive: boolean = false
 	let canvas: HTMLCanvasElement
-
-	onMount(() => {
-		new rive.Rive({
-			src: opening,
-			canvas: canvas,
-			autoplay: true,
-		})
-	})
 	
 </script>
 
