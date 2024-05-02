@@ -5,18 +5,38 @@
     import { Sun, Moon } from "lucide-svelte"
 	import * as ease from 'svelte/easing'
 	import ModeSwitch from '$lib/modeSwitch.svelte'
+
+	// Generel images and assets
 	import logoWhite from '$lib/assets/SkøtmediaWhite.svg'
 	import logoBlue from '$lib/assets/SkøtmediaBlue.svg'
 	import webLogo from '$lib/assets/SkøtmediaWhiteWebBlue.png'
 	import photoLogo from '$lib/assets/SkøtmediaWhitePhotoBlue.png'
 	import hiPictire from '$lib/assets/SktmediaHi.png'
+	import Waving from '$lib/assets/Waving.png'
+
+
+	// Images for the web carousel
 	import AirborneImg from '$lib/assets/AirbornesiteV2.jpeg'
 	import BorderCollieImg from '$lib/assets/HundepensionV2.jpeg'
 	import KohavenImg from '$lib/assets/KohavenRoneklint.png'
-	import Waving from '$lib/assets/Waving.png'
+
+	
+	// Images for the photo carousel
 	import bryllupImg from '$lib/assets/bryllupImg.jpg'
 	import bryllupImg2 from '$lib/assets/bryllupImg2.jpg'
-
+	import fodselsdag from '$lib/assets/DSCF6089.jpg'
+	import konfirmation1 from '$lib/assets/P1099023.jpg'
+	import konfirmation2 from '$lib/assets/P1099392.jpg'
+	import konfirmation3 from '$lib/assets/P1099581.jpg'
+	import konfirmation4 from '$lib/assets/P1099878.jpg'
+	import konfirmation5 from '$lib/assets/P1110097.jpg'
+	import barnedåb1 from '$lib/assets/P1121518.jpg'
+	import barnedåb2 from '$lib/assets/P1121624.jpg'
+	import barnedåb3 from '$lib/assets/P1122034-Enhanced-NR.jpg'
+	import pdi1 from '$lib/assets/P1133941.jpg'
+	import pdi2 from '$lib/assets/P1156963.jpg'
+	import pdi3 from '$lib/assets/P1156723.jpg'
+	import pdi4 from '$lib/assets/P1156852.jpg'
 
 	function redirect(target: string) {
 		if(target == "web") {
@@ -90,31 +110,51 @@
 
 		<div id="photoContainer" class="flex w-full flex-row-reverse transition animate-photoScroll">
 			<div class="h-72 min-w-fit">
-				<img src={bryllupImg} alt="airborne site" class="object-cover h-full">
+				<img src={bryllupImg} alt="bryllup image1" class="object-cover h-full">
 			</div>
 			<div class="h-72 min-w-fit">
-				<img src={bryllupImg2} alt="BorderColliePension site" class="object-cover h-full">
+				<img src={bryllupImg2} alt="bryllup image2" class="object-cover h-full">
 			</div>
 			<div class="h-72 min-w-fit">
-				<img src={KohavenImg} alt="Kohaven Roneklint site" class="object-cover h-full">
+				<img src={fodselsdag} alt="fødselsdag image1" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={konfirmation1} alt="fødselsdag image1" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={konfirmation2} alt="fødselsdag image1" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={konfirmation3} alt="fødselsdag image1" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={konfirmation4} alt="fødselsdag image1" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={konfirmation5} alt="fødselsdag image1" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={barnedåb1} alt="fødselsdag image1" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={barnedåb2} alt="fødselsdag image1" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={barnedåb3} alt="fødselsdag image1" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={pdi1} alt="fødselsdag image1" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={pdi2} alt="fødselsdag image1" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={pdi3} alt="fødselsdag image1" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={pdi4} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
 
-			<div class="h-72 min-w-fit">
-				<img src={bryllupImg} alt="airborne site" class="object-cover h-full">
-			</div>
-			<div class="h-72 min-w-fit">
-				<img src={bryllupImg2} alt="BorderColliePension site" class="object-cover h-full">
-			</div>
-			<div class="h-72 min-w-fit">
-				<img src={KohavenImg} alt="Kohaven Roneklint site" class="object-cover h-full">
-			</div>
-
-			<div class="h-72 min-w-fit">
-				<img src={bryllupImg} alt="airborne site" class="object-cover h-full">
-			</div>
-			<div class="h-72 min-w-fit">
-				<img src={bryllupImg2} alt="BorderColliePension site" class="object-cover h-full">
-			</div>
 		</div>
 		{/if}
 	</div>

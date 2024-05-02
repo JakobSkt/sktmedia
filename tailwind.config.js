@@ -32,13 +32,13 @@ export default {
           'to': { transform: 'translateX(-95.4%)' },
         },
         photoScroll: {
-          'to': { transform: 'translateX(95.35%)' },
+          'to': { transform: 'translateX(80%)' },
         },
       },
       animation: {
         wiggle: 'wiggle ease-out 750ms ',
         webScroll: 'webScroll 20s linear infinite',
-        photoScroll: 'photoScroll 20s linear infinite',
+        photoScroll: 'photoScroll 30s linear infinite',
       },
     },
   },
