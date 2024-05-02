@@ -13,6 +13,7 @@
 	import AirborneImg from '$lib/assets/AirbornesiteV2.jpeg'
 	import BorderCollieImg from '$lib/assets/HundepensionV2.jpeg'
 	import KohavenImg from '$lib/assets/KohavenRoneklint.png'
+	import Waving from '$lib/assets/Waving.png'
 
 
 	function redirect(target: string) {
@@ -48,6 +49,14 @@
 		<p id="photoPill" class="bg-zinc-200 w-full h-full text-zinc-100 font-black italic text-xl rounded-r-3xl p-1"> PHOTO </p>
 	</div>
 
+	<div class="absolute ml-16 -mt-20 rounded-xl w-48 h-12 bg-zinc-50 border-t-0 border border-zinc-200 drop-shadow-xl flex items-center justify-center z-50">
+		<img id="hiPicture" src={hiPictire} alt="jakob waving" class="absolute bottom-0 w-40">
+		<div class="absolute -bottom-3 -right-6 bg-cyan-950 outline outline-zinc-900 border border-zinc-300/20 rounded-full">
+			<p class="italic font-black text-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-transparent inline-block bg-clip-text px-2"> SAY HI! </p>
+			<img src={Waving} alt="waving hand" class="absolute w-8 -scale-x-100 -top-5 -right-5 -z-50">
+		</div>
+	</div>
+
 	<div id="carouselContainer" class="w-11/12 mt-4 h-72 border border-cyan-900 rounded-2xl mx-auto flex flex-row overflow-hidden">
 		<div class="h-72 w-fit">
 			<img src={AirborneImg} alt="airborne site" class="object-cover h-full">
@@ -64,6 +73,10 @@
 <style>
 	#hero {
 		mask-image: radial-gradient(black 5%, #777777 20%, transparent 70%)
+	}
+
+	#hiPicture {
+		mask-image: linear-gradient(black 80%, #afafaf 80%, transparent 100%)
 	}
 </style>
 
