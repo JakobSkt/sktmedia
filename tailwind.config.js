@@ -13,11 +13,15 @@ export default {
         'darkDots': 'url("./src/lib/assets/dot-pattern-darkV2.svg")',
       },
       backgroundSize: {
-        'smallDots': '8%',
+        'smallDots': '12%',
         'largeDots': '23%',
       },
       backgroundPosition: {
         'dotsPosition': '10% 9.9%',
+      },
+      fontSize: {
+        'xxs': '0.5rem',
+        'xxxs': '0.2rem',
       },
     },
   },

@@ -10,26 +10,10 @@
 	import webLogo from '$lib/assets/SkøtmediaWhiteWebBlue.png'
 	import photoLogo from '$lib/assets/SkøtmediaWhitePhotoBlue.png'
 	import hiPictire from '$lib/assets/SktmediaHi.png'
+	import AirborneImg from '$lib/assets/AirbornesiteV2.jpeg'
+	import BorderCollieImg from '$lib/assets/HundepensionV2.jpeg'
+	import KohavenImg from '$lib/assets/KohavenRoneklint.png'
 
-	let m = { x: 0, y: 0 }
-	let circle: HTMLDivElement
-	
-	let delay = 6
-	let revisedMousePosX = 0
-    let revisedMousePosY = 0
-
-	function handleMouseMove(event: MouseEvent) {
-		requestAnimationFrame(() => {
-			m.x = event.clientX
-			m.y = event.clientY
-	
-			revisedMousePosX += (m.x - revisedMousePosX) / delay;
-			revisedMousePosY += (m.y - revisedMousePosY) / delay; 
-			
-			circle.style.left = revisedMousePosX + 'px'
-			circle.style.top = revisedMousePosY + 'px'
-		})
-	}
 
 	function redirect(target: string) {
 		if(target == "web") {
@@ -41,128 +25,45 @@
 	}
 
 	let darkMode: boolean
-
-	let active: boolean = false
-	let webActive: boolean = false
-	let photoActive: boolean = false
-	let canvas: HTMLCanvasElement
 	
 </script>
 
-<main class="w-screen h-screen overflow-clip" on:mousemove={handleMouseMove}>
-	{#if webActive}
-		<div transition:scale={{duration: 300, easing: ease.quintOut}} class="absolute top-0 left-0 h-screen w-screen z-50 flex flex-col items-center justify-start bg-primary">
-			<img src={webLogo} alt="Skøtmedia weblogo" class="px-12">
-			<p class="font-light text-neutral text-center w-2/3"> Skøtmedia WEB designer og vedligeholder moderne websystemer og apps med de nyeste teknologier. Fokus er at skabe en god brugeropvelese og et lækkert design.</p>
+<main class="w-screen h-screen overflow-clip bg-white">
+	<div class="absolute inset-2 border border-cyan-900 rounded-2xl"></div>
 
-			<div class="flex flex-col items-center justify-center gap-2 w-full p-12">
-				<h2 class="font-black text-neutral place-self-start mx-10"> Arbejde </h2>
-				<div class="w-full p-4 rounded-2xl grid grid-cols-1 md:grid-cols-2 text-center bg-neutral text-white">
-					<div> First </div>
-					<div> Second </div>
-					<div> Third </div>
-					<div> Fourth </div>
-					<div> Fifth </div>
-					<div> Sixth </div>
-				</div>
-			</div>
-			
-			<div class="absolute top-0 right-0 p-4 md:p-8 cursor-pointer hover:*:stroke-zinc-300 transition" on:click={() => webActive = !webActive}>
-				<svg class="h-10 w-10 stroke-zinc-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-					<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 4.5-15 15m0 0h11.25m-11.25 0V8.25" />
-				  </svg>	  
-			</div>
-		</div>
-	{/if}
-	
-	{#if photoActive}
-	<div transition:scale={{duration: 300, easing: ease.quintOut}} class="absolute top-0 left-0 h-screen w-screen z-50 flex flex-col items-center justify-start bg-secondary">
-		<img src={photoLogo} alt="Skøtmedia photologo" class="px-12">
-		<p class="font-light text-neutral text-center w-2/3"> Skøtmedia Photo fanger de vigtigste øjeblikke i DIT liv og foreviger dem i foto- eller videoformat. Høj kvalitet, kundetilfredshed og kreativitet er vores nøgleord.</p>
+	<div id="hero" class="mx-auto w-7/12 p-28 bg-lightDots dark:bg-darkDots bg-dotsPosition bg-smallDots flex flex-col">
+		{#if darkMode}
+			<img class="h-60 mx-auto" src={logoWhite} alt="hero logo white"/>
+		{:else}
+			<img class="h-60 mx-auto" src={logoBlue} alt="hero logo blue"/>
+		{/if}
 
-		<div class="flex flex-col items-center justify-center gap-2 w-full p-12">
-			<h2 class="font-black text-neutral place-self-start mx-10"> Arbejde </h2>
-			<div class="w-full p-4 rounded-2xl grid grid-cols-3 text-center bg-neutral text-white">
-				<div class="badge">default</div>
-				<div class="badge badge-neutral">Bryllup</div>
-				<div class="badge badge-primary">Konfirmation</div>
-				<div class="badge badge-secondary">Barnedåb</div>
-				<div class="badge badge-accent">accent</div>
-				<div class="badge badge-ghost">ghost</div>
-			</div>
-		</div>
-
-		<div class="absolute top-0 left-0 p-4 md:p-8 cursor-pointer hover:*:stroke-zinc-300 transition" on:click={() => photoActive = !photoActive}>
-			<svg class="h-10 w-10 stroke-zinc-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-				<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 4.5 15 15m0 0V8.25m0 11.25H8.25" />
-			</svg>	
+		<div id="workPill" class="flex flex-row items-center justify-center w-fit px-4 mx-auto -mt-20 h-6 border border-cyan-700 rounded-xl gap-2">
+			<div class="w-3 h-3 rounded-full bg-green-400 justify-self-start"></div>
+			<p class="text-zinc-600 text-xs cursor-default"> Open to work </p>
 		</div>
 	</div>
-	{/if}
-	
-	<div class="h-screen w-screen flex flex-col bg-base-100 bg-largeDots md:bg-smallDots bg-dotsPosition {darkMode ? 'bg-darkDots' : 'bg-lightDots'}" id="hero">
-		<div class="absolute top-0 right-0 p-4">
-			<ModeSwitch bind:darkMode={darkMode}/>
-		</div>
+	<div id="selectionContainer" class="flex flex-row mx-auto items-center justify-center w-48 h-12 p-1 rounded-full border border-cyan-700 z-50 cursor-pointer">
+		<p id="webPill" class="bg-green-400 w-full h-full text-cyan-900 font-black italic text-3xl rounded-l-3xl px-4"> WEB </p>
+		<p id="photoPill" class="bg-zinc-200 w-full h-full text-zinc-100 font-black italic text-xl rounded-r-3xl p-1"> PHOTO </p>
+	</div>
 
-	
-		<div bind:this={circle} class="mouse z-50 bg-base-200"></div>
-		
-		<div class="top-0 flex flex-row">
-
-			{#if darkMode}
-				<img class="h-60 mx-auto my-16" src={logoWhite} alt="hero logo"/>
-			{:else}
-				<img class="h-60 mx-auto my-16" src={logoBlue} alt="hero logo"/>
-			{/if}
+	<div id="carouselContainer" class="w-11/12 mt-4 h-72 border border-cyan-900 rounded-2xl mx-auto flex flex-row overflow-hidden">
+		<div class="h-72 w-fit">
+			<img src={AirborneImg} alt="airborne site" class="object-cover h-full">
 		</div>
-		
-		<div class="w-screen h-1/2 mt-8">
-			<div class="absolute w-screen h-1/2 cursor-pointer" id="seperator">
-				
-				<div class:webActive={webActive} on:click={() => redirect('web')} class="bg-primary flex flex-col items-baseline *:mx-10 sm:*:mx-20 lg:*:mx-32 justify-evenly shadow-xl w-screen h-full grayscale-50 hover:scale-110 hover:grayscale-0 transition" id="webCard">
-					<h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white"> WEB </h1>
-				</div>
-	
-				<div class:photoActive={photoActive} on:click={() => redirect('photo')} class="bg-secondary absolute top-0 *:mx-4 sm:*:mx-20 lg:*:mx-32 flex flex-col items-end justify-evenly shadow-xl w-screen h-full grayscale-50 hover:scale-105 hover:grayscale-0 transition" id="photoCard">
-					<h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white"> PHOTO </h1>
-				</div>
-			</div>
-		</div>	
+		<div class="h-72 w-fit">
+			<img src={BorderCollieImg} alt="BorderColliePension site" class="object-cover h-full">
+		</div>
+		<div class="h-72 w-fit">
+			<img src={KohavenImg} alt="Kohaven Roneklint site" class="object-cover h-full">
+		</div>
 	</div>
 </main>
 
 <style>
-	#webCard {
-		-webkit-clip-path: polygon(100% 0, 0 0, 0 100%);
-		clip-path: polygon(0 0, 52.5% 0, 47.5% 100%, 0 100%);
-		transition: 750ms cubic-bezier(0.22, 1, 0.36, 1);
+	#hero {
+		mask-image: radial-gradient(black 5%, #777777 20%, transparent 70%)
 	}
-
-	#photoCard {
-		-webkit-clip-path: polygon(100% 0, 0 100%, 100% 0);
-		clip-path: polygon(52.5% 0, 100% 0, 100% 100%, 47.5% 100%);
-		transition: 750ms cubic-bezier(0.22, 1, 0.36, 1);
-	}
-
-	.mouse {
-		position: absolute;
-		width: 50px;
-		height: 50px;
-		margin: -12.5px 0 0 -25px;
-		border-radius: 50%;
-		pointer-events: none;
-		mix-blend-mode: multiply;
-		mask: radial-gradient(circle, black 40%, rgba(0, 0, 0, 0.2) 0%);	
-	}
-	
-	.webActive {
-		transform: scale(10) translateX(20%);
-	}
-
-	.photoActive {
-		transform: scale(10) translateX(-10%);
-	}
-
 </style>
 
