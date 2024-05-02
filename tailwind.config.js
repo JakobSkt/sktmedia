@@ -23,6 +23,23 @@ export default {
         'xxs': '0.5rem',
         'xxxs': '0.2rem',
       },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(7deg)' },
+          '50%': { transform: 'rotate(-7deg)' },
+        },
+        webScroll: {
+          'to': { transform: 'translateX(-95.4%)' },
+        },
+        photoScroll: {
+          'to': { transform: 'translateX(95.35%)' },
+        },
+      },
+      animation: {
+        wiggle: 'wiggle ease-out 750ms ',
+        webScroll: 'webScroll 20s linear infinite',
+        photoScroll: 'photoScroll 20s linear infinite',
+      },
     },
   },
   plugins: [require("daisyui")],
