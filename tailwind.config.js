@@ -29,16 +29,16 @@ export default {
           '50%': { transform: 'rotate(-7deg)' },
         },
         webScroll: {
-          'to': { transform: 'translateX(-255%)' },
+          'to': { transform: 'translateX(-252%)' },
         },
         photoScroll: {
-          'to': { transform: 'translateX(80%)' },
+          'to': { transform: 'translateX(358%)' },
         },
       },
       animation: {
-        wiggle: 'wiggle ease-out 750ms ',
-        webScroll: 'webScroll 30s linear infinite',
-        photoScroll: 'photoScroll 30s linear infinite',
+        wiggle: 'wiggle 550ms ',
+        webScroll: 'webScroll 60s linear infinite',
+        photoScroll: 'photoScroll 85s linear infinite',
       },
     },
   },

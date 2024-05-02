@@ -86,6 +86,7 @@
 	</div>
 
 	<div id="carouselContainer" class="w-11/12 mt-4 h-72 border border-cyan-900 rounded-2xl mx-auto overflow-hidden motion-reduce:overflow-scroll">
+		<p class="absolute font-medium text-xs -mt-4 ml-8 text-zinc-400"> Hover to pause </p>
 		{#if webActive}
 		<div id="webContainer" class="flex flex-row transition animate-webScroll">
 			<div class="h-72 min-w-fit">
@@ -175,6 +176,19 @@
 			</div>
 			<div class="h-72 min-w-fit">
 				<img src={pdi4} alt="fødselsdag image1" class="object-cover h-full">
+			</div>
+
+			<div class="h-72 min-w-fit">
+				<img src={bryllupImg} alt="bryllup image1" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={bryllupImg2} alt="bryllup image2" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={fodselsdag} alt="fødselsdag image1" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={konfirmation1} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
 
 		</div>
