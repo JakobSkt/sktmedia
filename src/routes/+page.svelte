@@ -16,6 +16,9 @@
 
 
 	// Images for the web carousel
+	import LinkZoneImg from '$lib/assets/LinkZoneImg.png'
+	import StudyZoneImg from '$lib/assets/StudyZoneImg.png'
+	import SparksImg from '$lib/assets/SparksImg.png'
 	import AirborneImg from '$lib/assets/AirbornesiteV2.jpeg'
 	import BorderCollieImg from '$lib/assets/HundepensionV2.jpeg'
 	import KohavenImg from '$lib/assets/KohavenRoneklint.png'
@@ -86,7 +89,16 @@
 		{#if webActive}
 		<div id="webContainer" class="flex flex-row transition animate-webScroll">
 			<div class="h-72 min-w-fit">
+				<img src={LinkZoneImg} alt="airborne site" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={StudyZoneImg} alt="BorderColliePension site" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
 				<img src={AirborneImg} alt="airborne site" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={SparksImg} alt="Kohaven Roneklint site" class="object-cover h-full">
 			</div>
 			<div class="h-72 min-w-fit">
 				<img src={BorderCollieImg} alt="BorderColliePension site" class="object-cover h-full">
@@ -96,7 +108,16 @@
 			</div>
 
 			<div class="h-72 min-w-fit">
+				<img src={LinkZoneImg} alt="airborne site" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={StudyZoneImg} alt="BorderColliePension site" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
 				<img src={AirborneImg} alt="airborne site" class="object-cover h-full">
+			</div>
+			<div class="h-72 min-w-fit">
+				<img src={SparksImg} alt="Kohaven Roneklint site" class="object-cover h-full">
 			</div>
 			<div class="h-72 min-w-fit">
 				<img src={BorderCollieImg} alt="BorderColliePension site" class="object-cover h-full">
@@ -104,6 +125,7 @@
 			<div class="h-72 min-w-fit">
 				<img src={KohavenImg} alt="Kohaven Roneklint site" class="object-cover h-full">
 			</div>
+
 		</div>
 			
 		{:else}

@@ -29,7 +29,7 @@ export default {
           '50%': { transform: 'rotate(-7deg)' },
         },
         webScroll: {
-          'to': { transform: 'translateX(-95.4%)' },
+          'to': { transform: 'translateX(-255%)' },
         },
         photoScroll: {
           'to': { transform: 'translateX(80%)' },
@@ -37,7 +37,7 @@ export default {
       },
       animation: {
         wiggle: 'wiggle ease-out 750ms ',
-        webScroll: 'webScroll 20s linear infinite',
+        webScroll: 'webScroll 30s linear infinite',
         photoScroll: 'photoScroll 30s linear infinite',
       },
     },
