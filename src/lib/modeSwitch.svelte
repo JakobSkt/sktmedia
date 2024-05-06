@@ -15,6 +15,7 @@
     })
 
     function toggleTheme() {
+        console.log('toggleTheme')
         if(!darkMode) {
             document.documentElement.setAttribute('class', 'dark')
         } else {
@@ -27,11 +28,11 @@
 </script>
   
 <main>
-    <button class="btn btn-ghost -z-10 rounded-2xl" on:click={toggleTheme}>
+    <button class="btn btn-ghost z-50 rounded-2xl" on:click={toggleTheme}>
         {#if darkMode}
-            <Sun class="stroke-amber-400 z-40"/>
+            <Sun class="stroke-amber-400 z-30"/>
         {:else}
-            <Moon class="stroke-cyan-900 z-40"/>
+            <Moon class="stroke-cyan-900 z-30"/>
         {/if}
     </button>
 </main>

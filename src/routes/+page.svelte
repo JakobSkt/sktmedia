@@ -47,9 +47,9 @@
 	
 </script>
 
-<main class="w-screen h-dvh md:h-screen overflow-clip bg-white dark:bg-zinc-900">
-	<div class="absolute inset-2 border border-cyan-800/50 dark:border-cyan-900/50 rounded-2xl">
-		<div class="p-2 float-end z-50">
+<main class="w-screen h-screen overflow-clip bg-white dark:bg-zinc-900">
+	<div class="absolute inset-2 border border-cyan-800/50 dark:border-cyan-900/50 rounded-2xl z-50">
+		<div class="p-2 float-end">
 			<ModeSwitch bind:darkMode={darkMode} />
 		</div>
 	</div>
@@ -73,7 +73,7 @@
 		</div>
 	</div>
 
-	<div id="hiContainer" class="absolute bottom-0 left-1/3 mb-12 mx-auto sm:bottom-auto sm:left-auto sm:ml-16 sm:-mt-20 rounded-xl w-20 sm:w-32 md:w-48 h-6 sm:h-8 md:h-12 bg-zinc-50 dark:bg-zinc-800 border-t-0 border border-zinc-200 dark:border-zinc-600 drop-shadow-xl flex flex-row items-center justify-center z-50">
+	<div id="hiContainer" class="absolute bottom-0 left-1/3 mb-12 mx-auto rounded-xl w-20 sm:w-28 lg:w-40 sm:left-auto sm:ml-4 sm:mb-4 h-6 sm:h-8 lg:h-12 bg-zinc-50 dark:bg-zinc-800 border-t-0 border border-zinc-200 dark:border-zinc-600 drop-shadow-xl flex flex-row items-center justify-center z-50">
 			<img id="hiPicture" src={hiPictire} alt="jakob waving" class="absolute bottom-0 w-40">
 			<div class="group absolute -bottom-3 -right-6 bg-cyan-950 outline outline-zinc-900 border border-zinc-300/20 rounded-full cursor-pointer hover:bg-cyan-900 hover:border-zinc-200/20 hover:outline-zinc-600">
 				<a href="mailto:kontakt@sktmedia.dk">
