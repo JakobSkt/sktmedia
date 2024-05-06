@@ -13,6 +13,7 @@
 	import photoLogo from '$lib/assets/SkøtmediaWhitePhotoBlue.png'
 	import hiPictire from '$lib/assets/SktmediaHi.png'
 	import Waving from '$lib/assets/Waving.png'
+	import InstagramLogo from '$lib/assets/InstagramLogo.svg'
 
 
 	// Images for the web carousel
@@ -41,54 +42,59 @@
 	import pdi3 from '$lib/assets/P1156723.jpg'
 	import pdi4 from '$lib/assets/P1156852.jpg'
 
-	function redirect(target: string) {
-		if(target == "web") {
-			goto('/web')
-		}
-		else if(target == "photo") {
-			window.location.href = "https://byjakobskoet.mypixieset.com/", "_blank"
-		}
-	}
-
 	let webActive: boolean = false
 	let darkMode: boolean = false
 	
 </script>
 
-<main class="w-screen h-screen overflow-clip bg-white">
-	<div class="absolute inset-2 border border-cyan-800/50 rounded-2xl"></div>
+<main class="w-screen h-dvh md:h-screen overflow-clip bg-white dark:bg-zinc-900">
+	<div class="absolute inset-2 border border-cyan-800/50 dark:border-cyan-900/50 rounded-2xl">
+		<div class="p-2 float-end z-50">
+			<ModeSwitch bind:darkMode={darkMode} />
+		</div>
+	</div>
 
-	<div id="hero" class="mx-auto w-7/12 p-28 bg-lightDots dark:bg-darkDots bg-dotsPosition bg-smallDots flex flex-col">
+	<div id="hero" class="mx-auto w-screen lg:w-8/12 md:p-28 py-16 bg-lightDots dark:bg-darkDots bg-dotsPosition bg-smallDots flex flex-col">
 		{#if darkMode}
 			<img class="h-60 mx-auto" src={logoWhite} alt="hero logo white"/>
 		{:else}
 			<img class="h-60 mx-auto" src={logoBlue} alt="hero logo blue"/>
 		{/if}
 
-		<div id="workPill" class="flex flex-row items-center justify-center w-fit px-4 mx-auto -mt-20 h-6 border border-cyan-700 bg-zinc-50 rounded-xl gap-2">
-			<div class="w-3 h-3 rounded-full bg-green-400 justify-self-start animate-pulse"></div>
-			<p class="text-zinc-600 text-xs cursor-default"> Open to work </p>
+		<div id="workPill" class="flex flex-row items-center justify-center w-fit px-4 mx-auto -mt-16 lg:-mt-12 xl:-mt-20 h-6 border border-cyan-700 dark:border-cyan-900 bg-zinc-50 dark:bg-zinc-900 rounded-xl gap-2">
+			<div class="w-3 h-3 rounded-full bg-green-400 dark:bg-green-300 justify-self-start animate-pulse"></div>
+			<p class="text-zinc-600 dark:text-zinc-200 text-xs cursor-default"> Open to work </p>
 		</div>
 	</div>
-	<div id="selectionContainer" class="flex flex-row mx-auto items-center justify-center w-48 h-12 p-1 rounded-full border border-cyan-700 z-50 cursor-pointer">
-		<p id="webPill" class:active={webActive} class="bg-zinc-200 cursor-pointer z-50 w-full h-full font-black italic text-xl rounded-l-3xl p-1 text-zinc-600 duration-[125] hover:text-zinc-400" on:click={() => webActive = true}> WEB </p>
-		<p id="photoPill" class:active={!webActive} class="bg-zinc-200 cursor-pointer z-50 w-full h-full font-black italic text-xl rounded-r-3xl p-1 text-zinc-600 duration-[125] hover:text-zinc-400" on:click={() => webActive = false}> PHOTO </p>
-	</div>
-
-	<div id="hiContainer" class="absolute ml-16 -mt-20 rounded-xl w-48 h-12 bg-zinc-50 border-t-0 border border-zinc-200 drop-shadow-xl flex items-center justify-center z-50">
-		<img id="hiPicture" src={hiPictire} alt="jakob waving" class="absolute bottom-0 w-40">
-		<div class="group absolute -bottom-3 -right-6 bg-cyan-950 outline outline-zinc-900 border border-zinc-300/20 rounded-full cursor-pointer hover:bg-cyan-900 hover:border-zinc-200/20 hover:outline-zinc-600">
-			<a href="mailto:kontakt@sktmedia.dk">
-				<p class="italic font-black text-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-transparent inline-block bg-clip-text px-2"> SAY HI! </p>
-				<img src={Waving} alt="waving hand" class="absolute w-8 -top-5 -right-6 -z-50 group-hover:animate-wiggle transition">
-			</a>
+	<div id="selectionContainer" class="flex flex-col mx-auto items-center justify-center mt-8 sm:-mt-4 lg:-mt-8 w-48 h-12">
+		<div class="flex flex-row p-1 rounded-full border border-cyan-700 dark:border-cyan-900 z-50 cursor-pointer">
+			<p id="webPill" class:active={webActive} class="bg-zinc-200 dark:bg-zinc-600 cursor-pointer z-50 w-full h-full font-black italic text-xl rounded-l-3xl p-1 text-zinc-600 dark:text-zinc-400 duration-[125] hover:text-zinc-400 dark:hover:text-zinc-200" on:click={() => webActive = true}> WEB </p>
+			<p id="photoPill" class:active={!webActive} class="bg-zinc-200 dark:bg-zinc-600 cursor-pointer z-50 w-full h-full font-black italic text-xl rounded-r-3xl p-1 text-zinc-600 dark:text-zinc-400 duration-[125] hover:text-zinc-400 dark:hover:text-zinc-200" on:click={() => webActive = false}> PHOTO </p>		
 		</div>
 	</div>
 
-	<div id="carouselContainer" class="w-11/12 mt-4 h-72 border border-cyan-900 rounded-2xl mx-auto overflow-hidden motion-reduce:overflow-scroll">
-		<p class="absolute font-medium text-xs -mt-4 ml-8 text-zinc-400"> Hover to pause </p>
+	<div id="hiContainer" class="absolute bottom-0 left-1/3 mb-12 mx-auto sm:bottom-auto sm:left-auto sm:ml-16 sm:-mt-20 rounded-xl w-20 sm:w-32 md:w-48 h-6 sm:h-8 md:h-12 bg-zinc-50 dark:bg-zinc-800 border-t-0 border border-zinc-200 dark:border-zinc-600 drop-shadow-xl flex flex-row items-center justify-center z-50">
+			<img id="hiPicture" src={hiPictire} alt="jakob waving" class="absolute bottom-0 w-40">
+			<div class="group absolute -bottom-3 -right-6 bg-cyan-950 outline outline-zinc-900 border border-zinc-300/20 rounded-full cursor-pointer hover:bg-cyan-900 hover:border-zinc-200/20 hover:outline-zinc-600">
+				<a href="mailto:kontakt@sktmedia.dk">
+					<p class="italic font-black text-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-transparent inline-block bg-clip-text px-2"> SAY HI! </p>
+					<img src={Waving} alt="waving hand" class="absolute w-8 -top-5 -right-6 -z-50 group-hover:animate-wiggle transition">
+				</a>
+			</div>
+	</div>
+
+	<div id="carouselContainer" class="w-11/12 md:mt-8 mt-12 h-72 border border-cyan-900 rounded-2xl mx-auto overflow-clip z-30">
+		<p class="absolute font-medium text-xs -mt-4 ml-8 text-zinc-400 dark:text-zinc-600"> Hover to pause </p>
+		{#if !webActive}
+		<a href="https://byjakobskoet.mypixieset.com/" target="_blank" class="absolute right-0 mr-28 flex flex-row -mt-4 items-center gap-1 cursor-pointer">
+			<p class="text-zinc-400 text-xs font-medium"> View more photos in my portfolio </p>
+			<svg class="w-3 h-3 stroke-zinc-400 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+			</svg>
+		</a>
+		{/if}
 		{#if webActive}
-		<div id="webContainer" class="flex flex-row transition animate-webScroll">
+		<div id="webContainer" class="flex flex-row transition animate-webScroll motion-reduce:animate-none">
 			<div class="h-72 min-w-fit">
 				<img src={LinkZoneImg} alt="airborne site" class="object-cover h-full">
 			</div>
@@ -131,10 +137,10 @@
 			
 		{:else}
 
-		<div id="photoContainer" class="flex w-full flex-row-reverse transition animate-photoScroll">
+		<div id="photoContainer" class="flex w-full flex-row-reverse transition animate-photoScroll motion-reduce:animate-none z-100">
 			<div class="h-72 min-w-fit">
 				<img src={bryllupImg} alt="bryllup image1" class="object-cover h-full">
-			</div>
+			</div>	
 			<div class="h-72 min-w-fit">
 				<img src={bryllupImg2} alt="bryllup image2" class="object-cover h-full">
 			</div>
@@ -215,18 +221,16 @@
 		transition: 125ms
 	}
 	
-	.active:hover {
+	.active {
 		color: white;
 	}
 
 	#webContainer:hover {
 		animation-play-state: paused;
-		filter: grayscale(0) !important;
 	}
 
 	#photoContainer:hover {
 		animation-play-state: paused;
-		filter: grayscale(0) !important;
 	}
 
 </style>

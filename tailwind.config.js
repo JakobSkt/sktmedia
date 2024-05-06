@@ -3,8 +3,12 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
+  darkMode: 'selector',
   theme: {
     extend: {
+      zIndex: {
+        '100': '100',
+      },
       grayscale: {
         50: '50%'
       },

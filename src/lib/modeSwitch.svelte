@@ -3,49 +3,31 @@
     import { Button } from "$lib/components/ui/button"
     import { Sun, Moon } from "lucide-svelte"
     
-    let currentTheme = ''
-    let themes = ['dim', 'emerald']
-    export let darkMode = false
+    export let darkMode: boolean = false
 
     onMount(() => {
         if(typeof window !== 'undefined') {
-            const theme = window.localStorage.getItem('theme')
-            if(theme && themes.includes(theme)) {
-                document.documentElement.setAttribute('data-theme', theme)
-                theme == 'dim' ? darkMode = true : darkMode = false
-                currentTheme = theme
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dim')
-                currentTheme = 'dim'
+            if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                toggleTheme()
+                darkMode = true
             }
         }
     })
 
-    function setTheme() {
-        let newTheme = ''
-        switch(currentTheme) {
-            case 'dim':
-                newTheme = 'emerald'
-                break;
-            
-            case 'emerald':
-                newTheme = 'dim'
-                break;
+    function toggleTheme() {
+        if(!darkMode) {
+            document.documentElement.setAttribute('class', 'dark')
+        } else {
+            document.documentElement.removeAttribute('class')
         }
-       
-        const cookieAge = 60 * 60 * 24 * 365
-        window.localStorage.setItem('theme', newTheme)
-        document.cookie = `theme=${newTheme}; max-age=${cookieAge}; path=/; SameSite=Lax`
-        document.documentElement.setAttribute('data-theme', newTheme)
-        currentTheme = newTheme  
-        currentTheme == 'dim' ? darkMode = true : darkMode = false    
-        console.log(newTheme)      
-        
+
+        darkMode = !darkMode
     }
+
 </script>
   
 <main>
-    <button class="btn btn-ghost -z-10" on:click={setTheme}>
+    <button class="btn btn-ghost -z-10 rounded-2xl" on:click={toggleTheme}>
         {#if darkMode}
             <Sun class="stroke-amber-400 z-40"/>
         {:else}
