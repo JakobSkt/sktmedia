@@ -86,7 +86,7 @@
 	<div id="carouselContainer" class="w-11/12 md:mt-8 mt-12 h-72 border border-cyan-900 rounded-2xl mx-auto overflow-clip z-30">
 		<p class="absolute font-medium text-xs -mt-4 ml-8 text-zinc-400 dark:text-zinc-600"> Hover to pause </p>
 		{#if !webActive}
-		<a href="https://byjakobskoet.mypixieset.com/" target="_blank" class="absolute right-0 mr-28 flex flex-row -mt-4 items-center gap-1 cursor-pointer">
+		<a href="https://byjakobskoet.mypixieset.com/" target="_blank" class="absolute right-0 mr-10 sm:mr-28 flex flex-row -mt-4 items-center gap-1 cursor-pointer">
 			<p class="text-zinc-400 text-xs font-medium"> View more photos in my portfolio </p>
 			<svg class="w-3 h-3 stroke-zinc-400 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
 				<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
