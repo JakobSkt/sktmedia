@@ -9,38 +9,35 @@
 	// Generel images and assets
 	import logoWhite from '$lib/assets/SkøtmediaWhite.svg'
 	import logoBlue from '$lib/assets/SkøtmediaBlue.svg'
-	import webLogo from '$lib/assets/SkøtmediaWhiteWebBlue.png'
-	import photoLogo from '$lib/assets/SkøtmediaWhitePhotoBlue.png'
-	import hiPictire from '$lib/assets/SktmediaHi.png'
-	import Waving from '$lib/assets/Waving.png'
-	import InstagramLogo from '$lib/assets/InstagramLogo.svg'
+	import hiPictire from '$lib/assets/WebP/SktmediaHi.webp'
+	import Waving from '$lib/assets/WebP/Waving.webp'
 
 
 	// Images for the web carousel
-	import LinkZoneImg from '$lib/assets/LinkZoneImg.png'
-	import StudyZoneImg from '$lib/assets/StudyZoneImg.png'
-	import SparksImg from '$lib/assets/SparksImg.png'
-	import AirborneImg from '$lib/assets/AirbornesiteV2.jpeg'
-	import BorderCollieImg from '$lib/assets/HundepensionV2.jpeg'
-	import KohavenImg from '$lib/assets/KohavenRoneklint.png'
+	import LinkZoneImg from '$lib/assets/WebP/LinkZoneImg.webp'
+	import StudyZoneImg from '$lib/assets/WebP/StudyZoneImg.webp'
+	import SparksImg from '$lib/assets/WebP/SparksImg.webp'
+	import AirborneImg from '$lib/assets/WebP/AirbornesiteV2.webp'
+	import BorderCollieImg from '$lib/assets/WebP/HundepensionV2.webp'
+	import KohavenImg from '$lib/assets/WebP/KohavenRoneklint.webp'
 
 	
 	// Images for the photo carousel
-	import bryllupImg from '$lib/assets/bryllupImg.jpg'
-	import bryllupImg2 from '$lib/assets/bryllupImg2.jpg'
-	import fodselsdag from '$lib/assets/DSCF6089.jpg'
-	import konfirmation1 from '$lib/assets/P1099023.jpg'
-	import konfirmation2 from '$lib/assets/P1099392.jpg'
-	import konfirmation3 from '$lib/assets/P1099581.jpg'
-	import konfirmation4 from '$lib/assets/P1099878.jpg'
-	import konfirmation5 from '$lib/assets/P1110097.jpg'
-	import barnedåb1 from '$lib/assets/P1121518.jpg'
-	import barnedåb2 from '$lib/assets/P1121624.jpg'
-	import barnedåb3 from '$lib/assets/P1122034-Enhanced-NR.jpg'
-	import pdi1 from '$lib/assets/P1133941.jpg'
-	import pdi2 from '$lib/assets/P1156963.jpg'
-	import pdi3 from '$lib/assets/P1156723.jpg'
-	import pdi4 from '$lib/assets/P1156852.jpg'
+	import bryllupImg from '$lib/assets/WebP/bryllupImg.webp'
+	import bryllupImg2 from '$lib/assets/WebP/bryllupImg2.webp'
+	import fodselsdag from '$lib/assets/WebP/DSCF6089.webp'
+	import konfirmation1 from '$lib/assets/WebP/P1099023.webp'
+	import konfirmation2 from '$lib/assets/WebP/P1099392.webp'
+	import konfirmation3 from '$lib/assets/WebP/P1099581.webp'
+	import konfirmation4 from '$lib/assets/WebP/P1099878.webp'
+	import konfirmation5 from '$lib/assets/WebP/P1110097.webp'
+	import barnedåb1 from '$lib/assets/WebP/P1121518.webp'
+	import barnedåb2 from '$lib/assets/WebP/P1121624.webp'
+	import barnedåb3 from '$lib/assets/WebP/P1122034-Enhanced-NR.webp'
+	import pdi1 from '$lib/assets/WebP/P1133941.webp'
+	import pdi2 from '$lib/assets/WebP/P1156963.webp'
+	import pdi3 from '$lib/assets/WebP/P1156723.webp'
+	import pdi4 from '$lib/assets/WebP/P1156852.webp'
 
 	let webActive: boolean = false
 	let darkMode: boolean = false
@@ -48,10 +45,10 @@
 </script>
 
 <main class="w-screen h-screen overflow-clip bg-white dark:bg-zinc-900">
-	<div class="absolute inset-2 border border-cyan-800/50 dark:border-cyan-900/50 rounded-2xl z-30">
-		<div class="p-2 float-end">
-			<ModeSwitch bind:darkMode={darkMode} />
-		</div>
+	<div class="absolute inset-2 border border-cyan-800/50 dark:border-cyan-900/50 rounded-2xl"></div>
+
+	<div class="absolute p-4 rounded-2xl z-100 right-0">
+		<ModeSwitch bind:darkMode={darkMode} />
 	</div>
 
 	<div id="hero" class="mx-auto w-screen lg:w-8/12 md:p-28 py-16 bg-lightDots dark:bg-darkDots bg-dotsPosition bg-smallDots flex flex-col">
@@ -83,10 +80,10 @@
 			</div>
 	</div>
 
-	<div id="carouselContainer" class="w-11/12 md:mt-8 mt-12 h-72 border border-cyan-900 rounded-2xl mx-auto overflow-clip z-30">
+	<div id="carouselContainer" class="w-11/12 md:mt-8 mt-12 h-72 border border-cyan-900 rounded-2xl mx-auto overflow-clip z-100">
 		<p class="absolute font-medium text-xs -mt-4 ml-8 text-zinc-400 dark:text-zinc-600"> Hover to pause </p>
 		{#if !webActive}
-		<a href="https://byjakobskoet.mypixieset.com/" target="_blank" class="absolute right-0 mr-10 sm:mr-28 flex flex-row -mt-4 items-center gap-1 cursor-pointer z-50">
+		<a href="https://byjakobskoet.mypixieset.com/" target="_blank" class="absolute right-0 mr-10 sm:mr-28 flex flex-row -mt-4 items-center gap-1 cursor-pointer">
 			<p class="text-zinc-400 text-xs font-medium"> View more photos in my portfolio </p>
 			<svg class="w-3 h-3 stroke-zinc-400 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
 				<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
@@ -137,7 +134,7 @@
 			
 		{:else}
 
-		<div id="photoContainer" class="flex w-full flex-row-reverse transition animate-photoScroll motion-reduce:animate-none z-100">
+		<div id="photoContainer" class="flex w-full flex-row-reverse transition animate-photoScroll motion-reduce:animate-none">
 			<div class="h-72 min-w-fit">
 				<img src={bryllupImg} alt="bryllup image1" class="object-cover h-full">
 			</div>	

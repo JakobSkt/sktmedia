@@ -28,7 +28,7 @@
 </script>
   
 <main>
-    <button class="btn btn-ghost z-50 rounded-2xl" on:click={toggleTheme}>
+    <button class="btn btn-ghost rounded-2xl" on:click={toggleTheme}>
         {#if darkMode}
             <Sun class="stroke-amber-400 z-30"/>
         {:else}
