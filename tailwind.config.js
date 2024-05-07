@@ -44,6 +44,9 @@ export default {
         webScroll: 'webScroll 60s linear infinite',
         photoScroll: 'photoScroll 85s linear infinite',
       },
+      screens: {
+        '3xl': '1850px'
+      }
     },
   },
   plugins: [require("daisyui")],

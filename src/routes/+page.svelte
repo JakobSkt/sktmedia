@@ -63,24 +63,14 @@
 			<p class="text-zinc-600 dark:text-zinc-200 text-xs cursor-default"> Open to work </p>
 		</div>
 	</div>
-	<div id="selectionContainer" class="flex flex-col mx-auto items-center justify-center mt-8 sm:-mt-4 lg:-mt-8 w-48 h-12">
+	<div id="selectionContainer" class="flex flex-col mx-auto items-center justify-center mt-8 sm:mt-8 lg:mt-12 xl:mt-28 w-48 h-12">
 		<div class="flex flex-row p-1 rounded-full border border-cyan-700 dark:border-cyan-900 z-50 cursor-pointer">
 			<p id="webPill" class:active={webActive} class="bg-zinc-200 dark:bg-zinc-600 cursor-pointer z-50 w-full h-full font-black italic text-xl rounded-l-3xl p-1 text-zinc-600 dark:text-zinc-400 duration-[125] hover:text-zinc-400 dark:hover:text-zinc-200" on:click={() => webActive = true}> WEB </p>
 			<p id="photoPill" class:active={!webActive} class="bg-zinc-200 dark:bg-zinc-600 cursor-pointer z-50 w-full h-full font-black italic text-xl rounded-r-3xl p-1 text-zinc-600 dark:text-zinc-400 duration-[125] hover:text-zinc-400 dark:hover:text-zinc-200" on:click={() => webActive = false}> PHOTO </p>		
 		</div>
 	</div>
 
-	<div id="hiContainer" class="absolute bottom-0 left-1/3 mb-12 mx-auto rounded-xl w-20 sm:w-28 lg:w-40 sm:left-auto sm:ml-4 sm:mb-4 h-6 sm:h-8 lg:h-12 bg-zinc-50 dark:bg-zinc-800 border-t-0 border border-zinc-200 dark:border-zinc-600 drop-shadow-xl flex flex-row items-center justify-center z-50">
-			<img id="hiPicture" src={hiPictire} alt="jakob waving" class="absolute bottom-0 w-40">
-			<div class="group absolute -bottom-3 -right-6 bg-cyan-950 outline outline-zinc-900 border border-zinc-300/20 rounded-full cursor-pointer hover:bg-cyan-900 hover:border-zinc-200/20 hover:outline-zinc-600">
-				<a href="mailto:kontakt@sktmedia.dk">
-					<p class="italic font-black text-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-transparent inline-block bg-clip-text px-2"> SAY HI! </p>
-					<img src={Waving} alt="waving hand" class="absolute w-8 -top-5 -right-6 -z-50 group-hover:animate-wiggle transition">
-				</a>
-			</div>
-	</div>
-
-	<div id="carouselContainer" class="w-11/12 md:mt-8 mt-12 h-72 border border-cyan-900 rounded-2xl mx-auto overflow-clip z-100">
+	<div id="carouselContainer" class="w-11/12 md:mt-8 mt-12 lg:mt-8 h-72 lg:h-96 border border-cyan-900 rounded-2xl mx-auto overflow-clip z-100">
 		<p class="absolute font-medium text-xs -mt-4 ml-8 text-zinc-400 dark:text-zinc-600"> Hover to pause </p>
 		{#if !webActive}
 		<a href="https://byjakobskoet.mypixieset.com/" target="_blank" class="absolute right-0 mr-10 sm:mr-28 flex flex-row -mt-4 items-center gap-1 cursor-pointer">
@@ -92,41 +82,41 @@
 		{/if}
 		{#if webActive}
 		<div id="webContainer" class="flex flex-row transition animate-webScroll motion-reduce:animate-none">
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={LinkZoneImg} alt="airborne site" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={StudyZoneImg} alt="BorderColliePension site" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={AirborneImg} alt="airborne site" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={SparksImg} alt="Kohaven Roneklint site" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={BorderCollieImg} alt="BorderColliePension site" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={KohavenImg} alt="Kohaven Roneklint site" class="object-cover h-full">
 			</div>
 
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={LinkZoneImg} alt="airborne site" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={StudyZoneImg} alt="BorderColliePension site" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={AirborneImg} alt="airborne site" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={SparksImg} alt="Kohaven Roneklint site" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={BorderCollieImg} alt="BorderColliePension site" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={KohavenImg} alt="Kohaven Roneklint site" class="object-cover h-full">
 			</div>
 
@@ -135,67 +125,77 @@
 		{:else}
 
 		<div id="photoContainer" class="flex w-full flex-row-reverse transition animate-photoScroll motion-reduce:animate-none">
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={bryllupImg} alt="bryllup image1" class="object-cover h-full">
 			</div>	
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={bryllupImg2} alt="bryllup image2" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={fodselsdag} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={konfirmation1} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={konfirmation2} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={konfirmation3} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={konfirmation4} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={konfirmation5} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={barnedåb1} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={barnedåb2} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={barnedåb3} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={pdi1} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={pdi2} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={pdi3} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={pdi4} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
 
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={bryllupImg} alt="bryllup image1" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={bryllupImg2} alt="bryllup image2" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={fodselsdag} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
-			<div class="h-72 min-w-fit">
+			<div class="h-72 lg:h-96 min-w-fit">
 				<img src={konfirmation1} alt="fødselsdag image1" class="object-cover h-full">
 			</div>
 
 		</div>
 		{/if}
+	</div>
+
+	<div id="hiContainer" class="absolute bottom-0 left-1/3 mb-12 mx-auto rounded-xl w-20 sm:w-28 lg:w-40 sm:left-auto sm:ml-4 sm:mb-4 h-6 sm:h-8 lg:h-12 bg-zinc-50 dark:bg-zinc-800 border-t-0 border border-zinc-200 dark:border-zinc-600 drop-shadow-xl flex flex-row items-center justify-center z-50">
+		<img id="hiPicture" src={hiPictire} alt="jakob waving" class="absolute bottom-0 w-40">
+		<div class="group absolute -bottom-3 -right-6 bg-cyan-950 outline outline-zinc-900 border border-zinc-300/20 rounded-full cursor-pointer hover:bg-cyan-900 hover:border-zinc-200/20 hover:outline-zinc-600">
+			<a href="mailto:kontakt@sktmedia.dk">
+				<p class="italic font-black text-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-transparent inline-block bg-clip-text px-2"> SAY HI! </p>
+				<img src={Waving} alt="waving hand" class="absolute w-8 -top-5 -right-6 -z-50 group-hover:animate-wiggle transition">
+			</a>
+		</div>
 	</div>
 </main>
 
