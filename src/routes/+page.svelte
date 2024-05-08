@@ -51,7 +51,7 @@
 		<ModeSwitch bind:darkMode={darkMode} />
 	</div>
 
-	<div id="hero" class="mx-auto w-screen lg:w-8/12 py-16 md:py-20 xl:py-12 bg-lightDots dark:bg-darkDots bg-dotsPosition bg-smallDots flex flex-col">
+	<div id="hero" class="mx-auto w-screen lg:w-8/12 py-16 md:py-20 bg-lightDots dark:bg-darkDots bg-dotsPosition bg-smallDots flex flex-col">
 		{#if darkMode}
 			<img class="h-60 mx-auto" src={logoWhite} alt="hero logo white"/>
 		{:else}
