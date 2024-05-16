@@ -32,8 +32,14 @@ export default {
           '0%, 100%': { transform: 'rotate(7deg)' },
           '50%': { transform: 'rotate(-7deg)' },
         },
-        webScroll: {
-          'to': { transform: 'translateX(-252%)' },
+        webScrollSm: {
+          '100%': { transform: 'translateX(-300%)' },
+        },
+        webScrollMd: {
+          '100%': { transform: 'translateX(-300%)' },
+        },
+        webScrollLg: {
+          '100%': { transform: 'translateX(-600%)' },
         },
         photoScroll: {
           'to': { transform: 'translateX(358%)' },
@@ -41,7 +47,10 @@ export default {
       },
       animation: {
         wiggle: 'wiggle 550ms ',
-        webScroll: 'webScroll 60s linear infinite',
+        webScrollSm: 'webScrollSm 25s linear infinite',
+        webScrollMd: 'webScrollMd 45s linear infinite',
+        webScrollLg: 'webScrollLg 65s linear infinite',
+
         photoScroll: 'photoScroll 85s linear infinite',
       },
       screens: {

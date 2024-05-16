@@ -82,7 +82,7 @@
 		</a>
 		{/if}
 		{#if webActive}
-		<div id="webContainer" class="flex flex-row transition animate-webScroll motion-reduce:animate-none">
+		<div id="webContainer" class="flex flex-row transition animate-webScrollSm sm:animate-webScrollMd lg:animate-webScrollLg motion-reduce:animate-none">
 			<div class="h-72 2xl:h-96 min-w-fit">
 				<img src={LinkZoneImg} alt="airborne site" class="object-cover h-full">
 			</div>
