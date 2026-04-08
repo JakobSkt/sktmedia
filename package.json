@@ -36,6 +36,7 @@
 	"type": "module",
 	"dependencies": {
 		"@rive-app/canvas": "^2.14.1",
+		"@sveltejs/adapter-node": "^5.5.4",
 		"bits-ui": "^0.14.0",
 		"clsx": "^2.1.0",
 		"embla-carousel-svelte": "^8.0.1",
